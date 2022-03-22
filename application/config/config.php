@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/dpapp';
-//$config['base_url'] = 'https://app.janswasthyakendra.com/';
+$config['base_url'] = 'http://localhost/medicalapp';
+//$config['base_url'] = '';
 
 
 /*

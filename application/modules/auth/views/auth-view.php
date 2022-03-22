@@ -3534,22 +3534,21 @@ $('.js-tilt').tilt({
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img style="width: 100%;
-height: 80%;" src="<?php echo base_url(); ?>resource/images/icon-logo.png" alt="IMG">
+					<img style="width: 100%; height: 80%;" src="<?php echo base_url(); ?>resource/images/icon-logo.png" alt="IMG">
 				</div>
 
 				<form method="post" action="<?php echo base_url(); ?>auth/login">
 					<span class="login100-form-title">
 						Login
 					</span>
-					 <div id="message" style="color:red; font-size: 18px; text-align:center; font-weight:700; center;">
+					<div id="message" style="color:red; font-size: 18px; text-align:center; font-weight:700; center;">
 					 	<?php
                         if ($this->session->flashdata('msg')) {
                           		$data = $this->session->flashdata('msg');
                           		echo $data['msg'];
 	                        }
-	                     ?>
-					 </div>
+	                    ?>
+					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					

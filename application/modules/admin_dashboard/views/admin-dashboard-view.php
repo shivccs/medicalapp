@@ -2,37 +2,49 @@
     <div class="">
       <div class="row top_tiles">
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-users"></i></div>
-            <div class="count"><?php echo $ausers; ?></div>
-            <h3>Users</h3>
-            <p>System active users</p>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Users</h4>
+              <div class="d-flex justify-content-between">
+                <p>System active users</p>
+                <p class="text-bold font-weight-bold"><?php echo $ausers; ?></p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-suitcase"></i></div>
-            <div class="count">0</div>
-            <h3>Doctors</h3>
-            <p>Total registered Doctors</p>
-          </div>
-        </div>
-
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-suitcase"></i></div>
-            <div class="count">0</div>
-            <h3>Active Doctors</h3>
-            <p>Total active Doctors</p>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Doctors</h4>
+              <div class="d-flex justify-content-between">
+                <p>Total registered Doctors</p>
+                <p class="text-bold font-weight-bold">0</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-suitcase"></i></div>
-            <div class="count">0</div>
-            <h3>Inactive Doctors</h3>
-            <p>Total inactive Doctors</p>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Active Doctors</h4>
+              <div class="d-flex justify-content-between">
+                <p>Total Active Doctors</p>
+                <p class="text-bold font-weight-bold">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Inactive Doctors</h4>
+              <div class="d-flex justify-content-between">
+                <p>Total Inactive Doctors</p>
+                <p class="text-bold font-weight-bold">0</p>
+              </div>
+            </div>
           </div>
         </div>
               
@@ -42,4 +54,3 @@
       </div>
 
     </div>
-  </div>

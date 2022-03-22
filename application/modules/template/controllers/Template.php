@@ -320,12 +320,12 @@ class Template extends MX_Controller {
 			
 	}
 
-public function patients()
+public function patient_list()
 	{	
 
 		if(isset($this->session->userdata['sessiondata']['user_id'])  && ($this->session->userdata['sessiondata']['is_active']==1) && ($this->session->userdata['sessiondata']['user_type']==1)){
 					
-					$data = array('module' => 'patients');	
+					$data = array('module' => 'patient_list');	
 					$this->load->view('template-view', $data);
 		}else{
 					$this->load->module('auth');
