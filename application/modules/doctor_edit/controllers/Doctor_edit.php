@@ -20,7 +20,7 @@ class Doctor_edit extends MX_Controller {
 	
 		$fname 			=		$this->input->post('fname');
 		$lname 			=		$this->input->post('lname');
-		$fathername		=		$this->input->post('fathername');
+		$cfee			=		$this->input->post('cfee');
 		$gender 		=		$this->input->post('gender');
 		$email 			=		$this->input->post('email');
 		$mobile			=		$this->input->post('mobile');
@@ -70,7 +70,7 @@ class Doctor_edit extends MX_Controller {
 
 
 			$ui_data = array(
-				'father_name'			=>		$fathername,
+				'consultation_fee'		=>		$cfee,
 				'gender'				=>		$gender,
 				'dob'					=>		$dob,
 				'address'				=>		$address,

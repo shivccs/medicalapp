@@ -23,16 +23,16 @@ class Doctor_profile extends MX_Controller {
 			
 			$category = $this->doctor_profile_model->get_category();
 			$specility = $this->doctor_profile_model->get_specility();
-		$states = $this->doctor_profile_model->get_indian_states();
+			$states = $this->doctor_profile_model->get_indian_states();
 
-		$mc = $this->doctor_profile_model->get_medical_council();
-		$md = $this->doctor_profile_model->get_medical_degrees();
+			$mc = $this->doctor_profile_model->get_medical_council();
+			$md = $this->doctor_profile_model->get_medical_degrees();
 		    // print_r($doc_data);
 
 			$data = array(
-				'doc_data'		=>		$doc_data,
-				'doc_img'		=>		$doc_img,
-				'category'		=>		$category,
+			'doc_data'		=>		$doc_data,
+			'doc_img'		=>		$doc_img,
+			'category'		=>		$category,
 			'specility'		=>		$specility,
 			'states'		=>		$states,
 			'mc'			=>		$mc,

@@ -21,6 +21,13 @@
             <option value="2">Senior Consultant Doctor</option>
           </select>
         </div>
+        <div class="col-md-2 col-sm-2 col-xs-12">
+          <label class="control-label" for="first-name">Consultation Fee <span class="required">*</span>
+          </label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <input type="text" required="required" name="cfee" id="cfee" class="form-control">
+        </div>
       </div>
       <br>
       <div class="row">
@@ -43,14 +50,6 @@
       <br>
 
       <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-12">
-          <label class="control-label" for="first-name">Father Name <span class="required">*</span>
-          </label>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <input type="text" required="required" name="fathername" id="fathername" class="form-control">
-        </div>
-
         <div class="col-md-2 col-sm-2 col-xs-12">
           <label class="control-label" for="first-name">Gender <span class="required">*</span>
           </label>
