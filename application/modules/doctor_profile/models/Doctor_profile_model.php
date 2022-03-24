@@ -12,7 +12,7 @@ class Doctor_profile_model extends CI_model {
 		$this->db->join('states st', 'st.id=di.state');
 		$this->db->join('cities ct', 'ct.id=di.city');
 		$this->db->join('doctor_profession dp', 'dp.doctor_id=di.doctor_id');
-		$this->db->join('users uu', 'uu.user_id=di.added_by');
+		$this->db->join('users uu', 'uu.user_id=di.added_by', 'left');
 		$this->db->where('d.doctor_id', $temp_doc_id);
 		$q = $this->db->get();
 		if ($q->num_rows()>0) {
@@ -112,6 +112,30 @@ class Doctor_profile_model extends CI_model {
 	      return false;
 	      exit;
 	    }
+	}
+
+
+	function edit_user($u_data, $ui_data, $uf_data, $id){
+		$this->db->trans_begin();
+
+		
+		    $r1=$this->db->where('doctor_id',$id)->update('doctors',$u_data);
+			
+		
+		
+			$r2=$this->db->where('doctor_id',$id)->update('doctor_info',$ui_data);
+
+		
+			$r3=$this->db->where('doctor_id',$id)->update('doctor_profession',$uf_data);
+
+		if (($r1==true)&&($r2==true)&&($r3==true)) {
+			$this->db->trans_commit();
+			return true;
+
+		}else{
+			 $this->db->trans_rollback();
+			 return false;
+		}
 	}
 
 }//end of class
