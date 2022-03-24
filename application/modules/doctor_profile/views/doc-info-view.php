@@ -370,11 +370,11 @@
 
               <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-12">
-                  <label class="control-label" for="first-name">Father Name <span class="required">*</span>
+                  <label class="control-label" for="first-name">Consultation Fee <span class="required">*</span>
                   </label>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12">
-                  <input type="text" required="required" name="fathername" value="<?php echo $doc_data['father_name']; ?>" id="fathername" class="form-control">
+                  <input type="text" required="required" name="cfee" value="<?php echo $doc_data['consultation_fee']; ?>" id="cfee" class="form-control">
                 </div>
 
                 <div class="col-md-2 col-sm-2 col-xs-12">

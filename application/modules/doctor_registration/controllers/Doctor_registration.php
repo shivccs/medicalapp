@@ -43,7 +43,7 @@ class Doctor_registration extends MX_Controller {
 		$doctor_type	=		$this->input->post('doctor_type');
 		$fname 			=		$this->input->post('fname');
 		$lname 			=		$this->input->post('lname');
-		$fathername		=		$this->input->post('fathername');
+		$cfee		=		$this->input->post('cfee');
 		$gender 		=		$this->input->post('gender');
 		$email 			=		$this->input->post('email');
 		$mobile			=		$this->input->post('mobile');
@@ -107,7 +107,7 @@ class Doctor_registration extends MX_Controller {
 
 			$ui_data = array(
 				'doctor_id'				=>		$doctor_id,
-				'father_name'			=>		$fathername,
+				'consultation_fee'		=>		$cfee,
 				'gender'				=>		$gender,
 				'dob'					=>		$dob,
 				'address'				=>		$address,

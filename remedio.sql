@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 08, 2022 at 12:23 PM
+-- Generation Time: Mar 24, 2022 at 10:02 AM
 -- Server version: 5.7.35-0ubuntu0.18.04.1
--- PHP Version: 7.2.24-0ubuntu0.18.04.7
+-- PHP Version: 7.3.30-1+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dpapp`
+-- Database: `remedio`
 --
 
 -- --------------------------------------------------------
@@ -48134,7 +48134,7 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`doctor_id`, `doctor_type`, `category_id`, `speciality_id`, `first_name`, `last_name`, `email`, `phone`, `pwd`, `last_login`, `login_count`, `is_email_verify`, `is_mobile_verify`, `is_active`, `created_on`) VALUES
-('DOC2021101802815', 1, 'DCI2021101801292', NULL, 'Mohit', 'Singh', 'mohit@dpapp.com', '9807889887', '9807889887', '2019-10-21 08:31:59', 22, 0, 0, 1, '2021-10-18 05:15:02'),
+('DOC2021101802815', 1, 'DCI2021101801292', 1, 'Mohit', 'Singh', 'mohit@dpapp.com', '9807889887', '9807889887', '2019-10-21 08:31:59', 22, 0, 0, 1, '2021-10-18 05:15:02'),
 ('DOC2021101803964', 2, 'DCI2021101801292', NULL, 'Shiv', 'Singh', 'shiv@dpapp.com', '9889012345', '9889012345', NULL, 0, 0, 0, 1, '2021-10-18 06:30:03'),
 ('DOC2021101817818', 2, 'DCI2021101837929', NULL, 'Swati singh,', 'singh', 'chauhanswati2108@gmail.com', '7388015060', '7388015060', NULL, 0, 0, 0, 1, '2021-10-18 07:05:17'),
 ('DOC2021101841218', 1, 'DCI2021101844380', NULL, 'VAIBHAV ', 'SAXENA ', 'msngo.in@gmail.com', '9653001839', '9653001839', NULL, 0, 0, 0, 1, '2021-10-18 06:59:41');
@@ -48254,7 +48254,8 @@ INSERT INTO `doctor_aviability` (`id`, `doctor_id`, `day`, `start`, `end`, `lati
 
 CREATE TABLE `doctor_info` (
   `doctor_id` varchar(20) NOT NULL,
-  `father_name` varchar(100) NOT NULL,
+  `father_name` varchar(100) DEFAULT NULL,
+  `consultation_fee` double(12,2) DEFAULT NULL,
   `gender` char(5) NOT NULL,
   `dob` date NOT NULL,
   `address` varchar(250) NOT NULL,
@@ -48271,11 +48272,11 @@ CREATE TABLE `doctor_info` (
 -- Dumping data for table `doctor_info`
 --
 
-INSERT INTO `doctor_info` (`doctor_id`, `father_name`, `gender`, `dob`, `address`, `state`, `city`, `pincode`, `latitude`, `longitude`, `added_on`, `added_by`) VALUES
-('DOC2021101802815', 'BP Singh', 'm', '2021-12-31', 'JKP', 38, 4533, '220001', '14545454', '54545', '2021-10-18', 'dpappadmin'),
-('DOC2021101803964', 'BP Singh', 'm', '2021-12-31', 'JKP', 38, 4535, '220001', '24.545454', '87.000000', '2021-10-18', 'dpappadmin'),
-('DOC2021101817818', 'Bp Singh', 'm', '2020-06-25', 'JKP Luckno', 16, 1364, '226021', '26.9402044', '80.9318324', '2021-08-06', 'dpapp'),
-('DOC2021101841218', 'UPENDRA KUMAR SAXENA ', 'm', '1998-08-24', 'gola', 38, 4924, '262802', '5', '9', '2021-10-18', 'dpappadmin');
+INSERT INTO `doctor_info` (`doctor_id`, `father_name`, `consultation_fee`, `gender`, `dob`, `address`, `state`, `city`, `pincode`, `latitude`, `longitude`, `added_on`, `added_by`) VALUES
+('DOC2021101802815', 'BP Singh', NULL, 'm', '2021-12-01', 'JKP', 2, 5, '220001', '14545454', '54545', '2022-03-24', 'dpappadmin'),
+('DOC2021101803964', 'BP Singh', NULL, 'm', '2021-12-31', 'JKP', 38, 4535, '220001', '24.545454', '87.000000', '2021-10-18', 'dpappadmin'),
+('DOC2021101817818', 'Bp Singh', NULL, 'm', '2020-06-25', 'JKP Luckno', 16, 1364, '226021', '26.9402044', '80.9318324', '2021-08-06', 'dpapp'),
+('DOC2021101841218', NULL, 5000.00, 'm', '1998-08-06', 'gola', 39, 5238, '262802', '5', '9', '2022-03-24', 'dpappadmin');
 
 -- --------------------------------------------------------
 
@@ -48302,10 +48303,10 @@ CREATE TABLE `doctor_profession` (
 
 INSERT INTO `doctor_profession` (`doctor_id`, `registration_no`, `medical_council`, `certification_year`, `medical_degree`, `passout_year`, `college_name`, `experience`, `added_by`, `added_on`) VALUES
 ('DOC2021072648464', 'UP32AZ4357', 'Medical Council of India', '2020', 'M.D. (Doctor of Medicine)', '2020', 'LU', 5, '', '2021-08-06'),
-('DOC2021101802815', 'Na', 'na', 'na', 'na', 'na', 'NA', 2, 'dpappadmin', '2021-10-18'),
+('DOC2021101802815', 'Na', 'Punjab Medical Council', '2005', 'Ph.D. (Doctor of Philosophy)', '2005', 'NA', 2, 'dpappadmin', '2022-03-24'),
 ('DOC2021101803964', '12345', 'Punjab Medical Council', '2021', 'M.B.B.S. (Bachelor of Medicine and Bachelor of Surgery)', '2021', 'SSB', 1, 'dpappadmin', '2021-10-18'),
 ('DOC2021101817818', '45', 'na', '2020', 'M.B.B.S. (Bachelor of Medicine and Bachelor of Surgery)', '2020', 'M S group lucknow', 5, 'dpappadmin', '2021-10-18'),
-('DOC2021101841218', '1246', 'na', '2020', 'na', '2019', 'M S group lucknow', 5, 'dpappadmin', '2021-10-18');
+('DOC2021101841218', '1246', 'Medical Council of India', '2019', 'Pharm.D. (Doctor of Pharmacy)', '2019', 'M S group lucknow', 5, 'dpappadmin', '2022-03-24');
 
 -- --------------------------------------------------------
 
@@ -48505,8 +48506,9 @@ CREATE TABLE `patients` (
   `patient_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `patient_name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_number` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pwd` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `age` int(5) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
   `gender` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `maritial_status` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `height` decimal(10,2) DEFAULT NULL,
@@ -48514,7 +48516,6 @@ CREATE TABLE `patients` (
   `blood_group` enum('A+','A-','B+','B-','O+','O-','AB+','AB-','NA') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_email_verified` tinyint(4) DEFAULT NULL,
   `is_mobile_verified` tinyint(4) DEFAULT NULL,
-  `created_by` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_on` date NOT NULL,
   `status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -48523,8 +48524,8 @@ CREATE TABLE `patients` (
 -- Dumping data for table `patients`
 --
 
-INSERT INTO `patients` (`patient_id`, `patient_name`, `phone_number`, `email`, `age`, `gender`, `maritial_status`, `height`, `weight`, `blood_group`, `is_email_verified`, `is_mobile_verified`, `created_by`, `created_on`, `status`) VALUES
-('DOC2021102633651', 'Mohit Singh', '8853535489', NULL, 25, 'male', 'Single', '175.00', '75.50', 'A+', 0, 0, '', '2021-10-26', 1);
+INSERT INTO `patients` (`patient_id`, `patient_name`, `phone_number`, `pwd`, `email`, `dob`, `gender`, `maritial_status`, `height`, `weight`, `blood_group`, `is_email_verified`, `is_mobile_verified`, `created_on`, `status`) VALUES
+('', 'Pname', '8853535489', '8853535489', NULL, '2022-12-31', 'Male', 'Married', NULL, NULL, NULL, NULL, NULL, '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -48541,7 +48542,6 @@ CREATE TABLE `patient_address` (
   `pincode` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `latitude` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `longitude` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_by` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_on` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -48549,8 +48549,9 @@ CREATE TABLE `patient_address` (
 -- Dumping data for table `patient_address`
 --
 
-INSERT INTO `patient_address` (`patient_address_id`, `patient_id`, `address`, `state`, `city`, `pincode`, `latitude`, `longitude`, `created_by`, `created_on`) VALUES
-(3, 'DOC2021102633651', '', '', '', '', '', '', '', '2021-10-25 18:30:00.000000');
+INSERT INTO `patient_address` (`patient_address_id`, `patient_id`, `address`, `state`, `city`, `pincode`, `latitude`, `longitude`, `created_on`) VALUES
+(3, 'DOC2021102633651', '', '', '', '', '', '', '2021-10-25 18:30:00.000000'),
+(4, '0', NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-24 04:31:51.661610');
 
 -- --------------------------------------------------------
 
@@ -53041,7 +53042,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type`, `user_role`, `first_name`, `middle_name`, `last_name`, `email`, `phone`, `pwd`, `last_login`, `login_count`, `is_email_verify`, `is_mobile_verify`, `is_active`, `created_on`) VALUES
-('dpappadmin', 1, 1, 'System', NULL, 'Admin', 'admin@admin.com', '9889012345', 'asdf', '2022-02-10 13:52:35', 35, 1, 1, 1, '2021-07-25 10:12:00'),
+('dpappadmin', 1, 1, 'System', NULL, 'Admin', 'admin@admin.com', '9889012345', 'asdf', '2022-03-24 09:09:51', 37, 1, 1, 1, '2021-07-25 10:12:00'),
 ('UID2021072526509', 3, 3, 'shiva', '-', 'test', 'shiv@admin.com', '8853535489', 'test', '2024-08-21 09:07:59', 3, 0, 0, 1, '2021-07-25 10:17:26'),
 ('UID2021101807624', 3, 3, 'Shiv', '', 'Singh', 'shiv@dpapp.com', '9807889887', '9807889887', NULL, 0, 0, 0, 1, '2021-10-18 05:21:07');
 
@@ -53414,7 +53415,7 @@ ALTER TABLE `medical_record_images`
 -- AUTO_INCREMENT for table `patient_address`
 --
 ALTER TABLE `patient_address`
-  MODIFY `patient_address_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `patient_address_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `patient_allergy`
 --
