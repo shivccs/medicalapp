@@ -39,7 +39,7 @@ class Doctor_profile extends MX_Controller {
 			'md'			=>		$md
 			  
 			);
-			$this->load->view('doc-info-view', $data);
+			$this->load->view('doc-info2-view', $data);
 		}else{
 			 redirect(base_url().'template/doctors_list');
 		}

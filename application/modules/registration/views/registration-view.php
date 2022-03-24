@@ -28,7 +28,7 @@
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
         <div class="row w-100 mx-0">
-          <div class="col-lg-4 mx-auto">
+          <div class="col-lg-4 mx-auto mb-4">
             <div class="auth-form-light text-left py-3 px-4 px-sm-5">
               <div class="brand-logo">
                 <img src="<?php echo base_url(); ?>theme/images/logo.svg" alt="logo">
@@ -71,13 +71,6 @@
                       <input name="mobile" type="text" class="form-control form-control-sm" placeholder="Enter Your Mobile Number" required>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                        <select class="form-control">
-                          <option hidden="IN">India</option>
-                        </select>
-                    </div>
-                  </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-sm" placeholder="Address Line" name="add">
@@ -106,6 +99,13 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-sm" placeholder="Postcode" name="pincode" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <select class="form-control">
+                          <option hidden="IN">India</option>
+                        </select>
                     </div>
                   </div>
                   

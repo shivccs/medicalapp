@@ -46,7 +46,8 @@
         <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
       </div>
       <div class="d-flex align-items-center">
-        <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+        <a class="text-light px-3 border-right border-light" href="<?php echo base_url(); ?>auth">Login</a>
+        <a class="px-3 btn btn-sm btn-outline-light register-btn" href="<?php echo base_url(); ?>registration">Register</a>
       </div>
     </div>
   </div>
@@ -106,7 +107,7 @@
           <div class="container">
             <h2>Welcome to <span>Remedio</span></h2>
             <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
+            <a href="#about" class="btn-get-started scrollto">Register Now</a>
           </div>
         </div>
 

@@ -22,6 +22,7 @@ class Registration extends MX_Controller {
 
 	public function signup(){
 		$this->load->model('registration_model');
+		$this->load->library('create_id');
 	
 		$patient_name 	=		$this->input->post('patient_name');
 		$gender 		=		$this->input->post('gender');
@@ -33,8 +34,9 @@ class Registration extends MX_Controller {
 		$city			=		$this->input->post('city');
 		$pincode		=		$this->input->post('pincode');
 
-
+		$patient_id = $this->create_id->construct_id('PT');
 		$u_data = array(
+			'patient_id'			=>		$patient_id,
 			'patient_name'			=>		$patient_name,
 			'phone_number'			=>		$mobile,
 			'pwd'					=>		$mobile,
