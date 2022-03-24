@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="129"
+   height="28"
+   viewBox="0 0 129 28"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.0.2 (1.0.2+r75+1)">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs20">
+    <rect
+       x="33.358726"
+       y="17.075288"
+       width="101.98595"
+       height="19.859619"
+       id="rect863" />
+    <rect
+       x="32.45744"
+       y="3.1816306"
+       width="93.334516"
+       height="23.25942"
+       id="rect855" />
+    <rect
+       x="34.033013"
+       y="4.5604117"
+       width="92.447651"
+       height="12.464095"
+       id="rect849" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="716"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="5.2716364"
+     inkscape:cx="64.5"
+     inkscape:cy="40.583437"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14" />
+  <g
+     fill="none"
+     fill-rule="evenodd"
+     id="g14">
+    <g
+       id="g12">
+      <circle
+         cx="14"
+         cy="14"
+         r="14"
+         fill="#F2125E"
+         id="circle4" />
+      <g
+         fill="#FFF"
+         id="g10">
+        <path
+           d="M6.078 18.861v-5.267a4.544 4.544 0 1 1 9.088 0v5.267H6.079z"
+           opacity=".428"
+           id="path6" />
+        <path
+           d="M20.884 9v9.811H6z"
+           id="path8" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       id="text847"
+       style="font-size:12px;line-height:1.25;font-family:Bevan;-inkscape-font-specification:Bevan;white-space:pre;shape-inside:url(#rect849);" />
+    <text
+       xml:space="preserve"
+       id="text853"
+       style="font-size:18px;line-height:1.25;font-family:Bevan;-inkscape-font-specification:Bevan;white-space:pre;shape-inside:url(#rect855);fill:#f2125e;fill-opacity:1;"
+       transform="translate(0.15768696,-1.7250423)"><tspan
+         x="32.457031"
+         y="18.368791"><tspan
+           style="font-size:18px;fill:#f2125e;fill-opacity:1">Remedio</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text861"
+       style="font-size:9px;line-height:1.25;font-family:Bevan;-inkscape-font-specification:Bevan;white-space:pre;shape-inside:url(#rect863);fill:#f877a3;fill-opacity:1;"
+       transform="translate(0.26731931,1.0618268)"><tspan
+         x="33.359375"
+         y="24.669747"><tspan
+           style="font-size:9px;fill:#f877a3;fill-opacity:1">Home Healthcare</tspan></tspan></text>
+  </g>
+</svg>

@@ -14,9 +14,9 @@
 			
               <div class="profile_img">
                 <div id="crop-avatar">
-                  <?php if ($doc_img) { ?>
+                  <?php if ($patient_img) { ?>
                   <!-- Current avatar -->
-                  <img class="img-responsive avatar-view" src="<?php echo base_url().$doc_img['path'].'/'.$doc_img['file_name']; ?>" alt="Avatar" title="Change the avatar">
+                  <img class="img-responsive avatar-view" src="<?php echo base_url().$patient_img['path'].'/'.$patient_img['file_name']; ?>" alt="Avatar" title="Change the avatar">
                 <?php }else{ ?>
 
                   <img class="img-responsive avatar-view" src="<?php echo base_url(); ?>assets/images/user.png" alt="Avatar" title="Change the avatar">
@@ -231,7 +231,7 @@
                       <th> Patient</th>
                       <th>Record Id</th>
                      
-                      <th> Doctor</th>
+                      <th> patient</th>
                      
                       <th>Call Type</th>
 					     <th>Call Duration</th>
@@ -339,7 +339,7 @@
                   </div>
                   <div role="tabpanel" class="tab-pane fade active in" id="tab_content3" aria-labelledby="profile-tab">
 				
- <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>doctor_registration/register">
+ <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>patient_registration/register">
   <div class="panel panel-info" style="margin: 1em;">
                     <div style="background-color:#2A3F54; color:white;" class="panel-heading">
                         <h3 class="panel-title"> Information</</h3>
@@ -353,7 +353,7 @@
                         <h3 class="panel-title"> Name</h3>
                     </div>
                     <div class="panel-body">
-                        <?php echo $doc_data['patient_name']; ?>
+                        <?php echo $patient_data['patient_name']; ?>
                     </div>
                 </div>
 				</div>
@@ -363,7 +363,7 @@
                         <h3 class="panel-title">Phone</h3>
                     </div>
                     <div class="panel-body">
-                        <?php echo $doc_data['phone_number']; ?>
+                        <?php echo $patient_data['phone_number']; ?>
                     </div>
                 </div>
 				</div>
@@ -373,7 +373,7 @@
                         <h3 class="panel-title">Email</h3>
                     </div>
                     <div class="panel-body">
-                        <?php echo $doc_data['email']; ?>
+                        <?php echo $patient_data['email']; ?>
                     </div>
                 </div>
 				</div>
@@ -383,7 +383,7 @@
                         <h3 class="panel-title">DOB</h3>
                     </div>
                     <div class="panel-body">
-                      <?php echo $doc_data['dob']; ?>
+                      <?php echo $patient_data['dob']; ?>
                     </div>
                 </div>
 				</div>
@@ -393,7 +393,7 @@
                         <h3 class="panel-title">Gender</h3>
                     </div>
                     <div class="panel-body">
-					<?php echo $doc_data['gender']; ?>
+					<?php echo $patient_data['gender']; ?>
                     </div>
                 </div>
 				</div>
@@ -403,7 +403,7 @@
                         <h3 class="panel-title">Maritial Status</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['maritial_status']; ?>
+                  <?php echo $patient_data['maritial_status']; ?>
 				  </div>
                 </div>
 				</div>
@@ -413,7 +413,7 @@
                         <h3 class="panel-title">Height</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['height']; ?>
+                  <?php echo $patient_data['height']; ?>
 				  </div>
                 </div>
 				</div>
@@ -423,7 +423,7 @@
                         <h3 class="panel-title">Weight</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['weight']; ?>
+                  <?php echo $patient_data['weight']; ?>
 				  </div>
                 </div>
 				</div>
@@ -433,7 +433,7 @@
                         <h3 class="panel-title">Blood Group</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['blood_group']; ?>
+                  <?php echo $patient_data['blood_group']; ?>
 				  </div>
                 </div>
 				</div>
@@ -443,7 +443,7 @@
                         <h3 class="panel-title">Address</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['address']; ?>
+                  <?php echo $patient_data['address']; ?>
 				  </div>
                 </div>
 				</div>
@@ -453,7 +453,7 @@
                         <h3 class="panel-title">City</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['city']; ?>
+                  <?php echo $patient_data['city']; ?>
 				  </div>
                 </div>
 				</div>
@@ -463,7 +463,7 @@
                         <h3 class="panel-title">State</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['state']; ?>
+                  <?php echo $patient_data['state']; ?>
 				  </div>
                 </div>
 				</div>
@@ -473,7 +473,7 @@
                         <h3 class="panel-title">Latitude</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['latitude']; ?>
+                  <?php echo $patient_data['latitude']; ?>
 				  </div>
                 </div>
 				</div>
@@ -483,7 +483,7 @@
                         <h3 class="panel-title">Longitude</h3>
                     </div>
                     <div class="panel-body">
-                  <?php echo $doc_data['longitude']; ?>
+                  <?php echo $patient_data['longitude']; ?>
 				  </div>
                 </div>
 				</div>
