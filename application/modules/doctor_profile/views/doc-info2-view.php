@@ -292,7 +292,7 @@
         <h4 class="modal-title">Edit Doctor</h4>
       </div>
       <div class="modal-body">
-          <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>doctor_edit/edit">
+          <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>doctor_profile/edit">
             <div class="title_left">
               <small>Basic Information</small>
               <hr>
@@ -410,17 +410,11 @@
                 </select>
                 <span>Select State</span>
               </div>
-              <style>
-              #city{display:none;}
-              </style>
               <div class="col-md-3 col-sm-3 col-xs-12">
-                <select class="form-control" name="city" id="roh" >
-                  <option><?php echo $doc_data['city_name']; ?></option>                       
-                </select>
                 <select class="form-control" name="city" required id="city">
-                  <option value="<?php $doc_data['city_name']; ?>"><?php $doc_data['city_name']; ?></option>                       
+                  <option value="<?php echo $doc_data['city']; ?>"><?php echo $doc_data['city_name']; ?></option>                       
                 </select>
-                <span>Select City<?php $doc_data['city_name']; ?></span>
+                <span>Select City</span>
               </div>
               <div class="col-md-2 col-sm-2 col-xs-12">
                 <input type="text" required="required" value="<?php echo $doc_data['pincode']; ?>" name="pincode" class="form-control">

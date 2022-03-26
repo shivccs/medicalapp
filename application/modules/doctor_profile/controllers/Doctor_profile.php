@@ -129,6 +129,103 @@ class Doctor_profile extends MX_Controller {
 	}//end of function profile_image
 
 
+	public function edit(){
+		$this->load->model('doctor_profile_model');
+		$session_user_id = $this->session->userdata['sessiondata']['user_id'];
+		$this->load->library('create_id');
+       
+	   
+	    $doctor_id			=		$this->input->post('doctorid');
+	
+		$fname 			=		$this->input->post('fname');
+		$lname 			=		$this->input->post('lname');
+		$cfee			=		$this->input->post('cfee');
+		$gender 		=		$this->input->post('gender');
+		$email 			=		$this->input->post('email');
+		$mobile			=		$this->input->post('mobile');
+		$dob 			=		$this->input->post('dob');
+		$category 		=		$this->input->post('category');
+		$address		=		$this->input->post('address');
+		$state			=		$this->input->post('state');
+		$city			=		$this->input->post('city');
+		$pincode		=		$this->input->post('pincode');
+		$lat 			=		$this->input->post('lat');
+		$long 			=		$this->input->post('long');
+
+
+		$registration_no		=		$this->input->post('registration_no');
+		$mc						=		$this->input->post('mc');
+		$mc_year				=		$this->input->post('mc_year');
+		$md						=		$this->input->post('md');
+		$md_year 				=		$this->input->post('md_year');
+		$md_college 			=		$this->input->post('md_college');
+		$experience 			=		$this->input->post('experience');
+
+		$specility 				=		$this->input->post('specility');
+
+		if ($specility=='na') {
+			$specility_val = null;
+		}else{
+			$specility_val = $specility;
+		}
+
+		
+
+
+		
+
+			$u_data = array(
+
+				'category_id'			=>		$category,
+				'speciality_id'			=>		$specility_val,
+				'first_name'			=>		$fname,
+				'last_name'				=>		$lname,
+				'email'					=>		$email,
+				'phone'					=>		$mobile,				
+				'pwd'					=>		$mobile,
+				
+			);
+			
+
+
+			$ui_data = array(
+				'consultation_fee'		=>		$cfee,
+				'gender'				=>		$gender,
+				'dob'					=>		$dob,
+				'address'				=>		$address,
+				'state'					=>		$state,
+				'city'					=>		$city,
+				'pincode'				=>		$pincode,
+				'latitude'				=>		$lat,
+				'longitude'				=>		$long,
+				'added_on'				=>		date('Y-m-d'),
+				'added_by' 				=>		$session_user_id
+			);
+
+			$uf_data = array(
+				'registration_no'		=>		$registration_no,		
+				'medical_council'		=>		$mc,
+				'certification_year'	=>		$mc_year,
+				'medical_degree'		=>		$md,
+				'passout_year'			=>		$md_year,
+				'college_name'			=>		$md_college,
+				'experience' 			=>		$experience,
+				'added_on'				=>		date('Y-m-d'),
+				'added_by' 				=>		$session_user_id
+			);	
+
+			//var_dump($doctor_id);exit;
+			$result = $this->doctor_profile_model->edit_user($u_data, $ui_data, $uf_data,$doctor_id);
+            //echo $result;
+			if ($result) {
+			$this->session->set_flashdata('msg', 'Doctor successfully Updated');
+			  redirect(base_url().'template/doctor_profile');
+			}else{
+				$this->session->set_flashdata('msg', 'Failed!');
+				  redirect(base_url().'template/doctor_profile');
+			}
+
+		}
 
 	
 
