@@ -1,99 +1,89 @@
-<div class="right_col" role="main">
-  <div class="">
-    <div class="clearfix"></div>
+<h2>Pharma Manufacturer <small>(Pharma manufacturer registration)</small></h2>
+<div class="card mt-3">
+  <div class="card-body">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2>Pharma Manufacturer <small>Pharma manufacturer registration</small></h2>
-            <div class="clearfix"></div>
-          </div>
-          <div class="x_content">
-            <br />
-            <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>pharmacy_manufacturer/new">
-              
+        <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>pharmacy_manufacturer/new">
+          
 
-              <div class="row">
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                  <label class="control-label" for="first-name">Manufacturer Name</label>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                  <input type="text" required="required" name="manufacturer" class="form-control">
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                  <button type="submit" class="btn btn-success">Create</button>
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-12">
-                  <label id="status" class="text-info">
-                    <?php
-                        if ($this->session->flashdata('msg')) {
-                          echo $this->session->flashdata('msg');
-                        }
-                     ?>
-                  </label>
-                </div>  
-              </div>
-            </form>
-
-            <div class="ln_solid"></div>
-              <br>
-            <div class="row">
-              <div class="col-md-12">
-                  <table id="datatable" class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Sno</th>
-                        <th>Manufacturer Name</th>
-                        <th>Created By</th>
-                        <th>Created On</th>
-                        <th>Status</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-
-
-                    <tbody>
-                      <?php $sno =1; if ($manufacturers) {
-                                foreach ($manufacturers as $key => $urvalue) { ?>
-                      <tr>
-                        <td><?php echo $sno; ?></td>
-                        <td><?php echo $urvalue['manufacturer_name']; ?></td>
-                        <td><?php echo $urvalue['added_by']; ?></td>
-                        <td><?php echo $urvalue['created_on']; ?></td>
-                        <td>
-                        <?php
-                            if ($urvalue['status']) {
-                                echo "Active";
-                            }else{
-                                echo "Not Active";
-                            }
-
-
-                        ?>
-                       </td>
-                        <td>
-                          <a href="#" class="text-info">
-                            <i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
-                          </a>
-                        </td>
-                        <td>
-                          <a href="#" class="text-danger">
-                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-                          </a>
-                        </td>                        
-                      </tr>
-                      <?php $sno++; }} ?>
-                    </tbody>
-                </table>
-              </div>
+          <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-12">
+              <label class="control-label" for="first-name">Manufacturer Name</label>
             </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="text" required="required" name="manufacturer" class="form-control">
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <label id="status" class="text-info">
+                <?php
+                    if ($this->session->flashdata('msg')) {
+                      echo $this->session->flashdata('msg');
+                    }
+                 ?>
+              </label>
+            </div>  
           </div>
-        </div>
+        </form>
       </div>
     </div>
+  </div>
+</div>
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+          <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Sno</th>
+                <th>Manufacturer Name</th>
+                <th>Created By</th>
+                <th>Created On</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
 
 
+            <tbody>
+              <?php $sno =1; if ($manufacturers) {
+                        foreach ($manufacturers as $key => $urvalue) { ?>
+              <tr>
+                <td><?php echo $sno; ?></td>
+                <td><?php echo $urvalue['manufacturer_name']; ?></td>
+                <td><?php echo $urvalue['added_by']; ?></td>
+                <td><?php echo $urvalue['created_on']; ?></td>
+                <td>
+                  <?php
+                      if ($urvalue['status']) {
+                          echo "Active";
+                      }else{
+                          echo "Not Active";
+                      }
+
+
+                  ?>
+                </td>
+                <td>
+                  <a href="#" class="text-info">
+                    <i class="mdi mdi-grease-pencil" aria-hidden="true"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="#" class="text-danger">
+                    <i class="mdi mdi-cup" aria-hidden="true"></i>
+                  </a>
+                </td>                       
+              </tr>
+              <?php $sno++; }} ?>
+            </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 

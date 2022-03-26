@@ -4,33 +4,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Patient_profile_model extends CI_model {
 	
 
-	function get_patient_data($temp_doc_id){
+	function get_patient_data($temp_patient_id){
 		$this->db->select('*');
 		$this->db->from('patients d');
 		$this->db->join('patient_address dp', 'dp.patient_id=d.patient_id');
-		$this->db->where('d.patient_id', $temp_doc_id);
+		$this->db->where('d.patient_id', $temp_patient_id);
 		$q = $this->db->get();
 		if ($q->num_rows()>0) {
 			return $q->row_array();
 		}else{
 			return false;
 		}
-	}//end of function get_doctor_data
+	}//end of function get_patienttor_data
 
-	function get_patient_img($temp_doc_id){
+	function get_patient_img($temp_patient_id){
 		$this->db->select('*');
-		$this->db->where('ref_id', $temp_doc_id);
+		$this->db->where('ref_id', $temp_patient_id);
 		$q = $this->db->get('images');
 		if ($q->num_rows()>0) {
 			return $q->row_array();
 		}else{
 			return false;
 		}
-	}//end of function get_doctor_img
+	}//end of function get_patienttor_img
 	function get_category(){
 		$this->db->select('*');
 		$this->db->where('status', 1);
-		$q = $this->db->get('doctors_category');
+		$q = $this->db->get('patienttors_category');
 
 		return $q->result_array();
 	}
@@ -82,7 +82,6 @@ class Patient_profile_model extends CI_model {
 		$this->db->select('*');
 		$this->db->from('consultation');
 		$this->db->join('patients', 'patients.patient_id=consultation.patient_id');
-		$this->db->join('doctors', 'doctors.doctor_id=consultation.doctor_id');
 		$this->db->where('patients.patient_id', $pid);
 	   $q = $this->db->get();
 

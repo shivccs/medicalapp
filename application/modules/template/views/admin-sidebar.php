@@ -23,7 +23,7 @@
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#dctr-mngmnt" aria-expanded="false" aria-controls="ui-basic">
-        <i class="typcn typcn-heart-outline menu-icon"></i>
+        <i class="mdi mdi-stethoscope menu-icon"></i>
         <span class="menu-title">Doctor Management</span>
         <i class="typcn typcn-chevron-right menu-arrow"></i>
       </a>
@@ -44,6 +44,21 @@
       <div class="collapse" id="ptnt-mngmnt">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/patient_list">Patient List</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#phrmcy" aria-expanded="false" aria-controls="ui-basic">
+        <i class="typcn typcn-pipette menu-icon"></i>
+        <span class="menu-title">Pharmacy</span>
+        <i class="typcn typcn-chevron-right menu-arrow"></i>
+      </a>
+      <div class="collapse" id="phrmcy">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/pharmacy_category">Pharmacy Category</a></li>
+          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/pharmacy_manufacturer">Pharmacy Manufacturer</a></li>
+          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/pharmacy_leaf">Pharmacy Leaf</a></li>
+          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/pharmacy_units">Pharmacy Unit</a></li>
         </ul>
       </div>
     </li>

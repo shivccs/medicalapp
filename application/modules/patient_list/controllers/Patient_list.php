@@ -33,7 +33,7 @@ class Patient_list extends MX_Controller {
 		$check_user = $this->patient_list_model->get_check_patient($user_id);
 		
 		if ($check_user) {
-			$this->session->set_tempdata('temp_doc_id', $user_id, 1000);
+			$this->session->set_tempdata('temp_patient_id', $user_id, 1000);
 	        redirect(base_url().'template/patient_profile');
 		}else{
 			//$this->session->set_flashdata('msg', 'Failed! Mobile is already registered');

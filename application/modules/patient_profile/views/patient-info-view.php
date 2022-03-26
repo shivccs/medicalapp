@@ -52,7 +52,7 @@
                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                   <li role="presentation" class="active"><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Profile</a>
                   </li>
-				   <li role="presentation" ><a href="#tab_content2" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Lifestyle</a>
+				   <li role="presentation" ><a href="#tab_content2" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Lifestyle:<?php echo $patient_data['patient_name']; ?></a>
                   </li>
                   <li role="presentation" ><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Allergy</a>
                   </li>
@@ -350,7 +350,7 @@
 			   <div class="col-md-4 col-sm-4 col-xs-12">
 			   <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> Name</h3>
+                        <h3 class="panel-title"> Name:<?php echo $patient_data['patient_name']; ?></h3>
                     </div>
                     <div class="panel-body">
                         <?php echo $patient_data['patient_name']; ?>
