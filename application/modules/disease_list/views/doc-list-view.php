@@ -22,9 +22,8 @@
                       <th>Added By</th>
                       <th>Added On</th>
                       <th>Status</th>
-					     <th>Edit</th>
-                        <th>Delete</th>
-                    
+					            <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
 
@@ -40,26 +39,23 @@
                       <td><?php echo $udvalue['created_on']; ?></td>
                       <td>
                         <?php
-                            if ($udvalue['status']) {
-                                echo "Active";
-                            }else{
-                                echo "Not Active";
-                            }
-
-
+                          if ($udvalue['status']) {
+                              echo "Active";
+                          }else{
+                              echo "Not Active";
+                          }
                         ?>
                       </td>
-					  <td>
-                          <a href="<?php echo base_url(); ?>template/disease_edit/<?php echo $udvalue['cronic_disease_id']; ?>" class="text-info">
-                            <i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
-                          </a>
-                        </td>
-                        <td>
-                          <a href="<?php echo base_url(); ?>template/disease_delete/<?php echo $udvalue['cronic_disease_id']; ?>" class="text-danger">
-                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-                          </a>
-                        </td>  
-                     
+					            <td>
+                        <a href="<?php echo base_url(); ?>template/disease_edit/<?php echo $udvalue['cronic_disease_id']; ?>" class="text-info">
+                          <i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="<?php echo base_url(); ?>template/disease_delete/<?php echo $udvalue['cronic_disease_id']; ?>" class="text-danger">
+                          <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                        </a>
+                      </td>  
                     </tr>
                     <?php $sno++; }} ?>
                   </tbody>

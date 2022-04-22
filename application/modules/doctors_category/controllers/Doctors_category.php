@@ -14,9 +14,11 @@ class Doctors_category extends MX_Controller {
 		$this->load->model('doctors_category_model');
 		$user_id = $this->session->userdata['sessiondata']['user_id'];
 		$units = $this->doctors_category_model->get_category();
+		$diseases = $this->doctors_category_model->get_disease();
 		//var_dump($doctors_categorys);exit;
 		$data = array(
-			'units'		=>	$units
+			'units'		=>	$units,
+			'diseases'	=>	$diseases
 		);
 		$this->load->view('doc-cat-view', $data);
 			

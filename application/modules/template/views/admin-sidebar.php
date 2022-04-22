@@ -30,6 +30,7 @@
       <div class="collapse" id="dctr-mngmnt">
         <ul class="nav flex-column sub-menu">
         <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/doctors_speciality">Doctors Speciality List</a></li>
+        <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/doctors_category">Doctors Category</a></li>
         <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/doctor_registration">Doctor Registration</a></li>
         <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/doctors_list">Doctors List</a></li>
         </ul>

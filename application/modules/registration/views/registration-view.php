@@ -36,9 +36,14 @@
               <h4>Registration Form</h4>
               <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url(); ?>registration/signup">
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-sm" placeholder="Enter your name here" name="patient_name" required>
+                      <input type="text" class="form-control form-control-sm" placeholder="First Name" name="fname" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-sm" placeholder="Last Name" name="lname">
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -73,7 +78,12 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-sm" placeholder="Address Line" name="add">
+                      <input name="email" type="email" class="form-control form-control-sm" placeholder="Enter Your Email" required>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-sm" placeholder="Address Line" name="address">
                     </div>
                   </div>
                   <div class="col-md-6">

@@ -34,22 +34,12 @@ class Registration_model extends CI_model {
 	    }
 	}//end of function get_cities_by_state
 
-	function signup($u_data, $add, $state, $city, $pincode){
+	function signup($u_data, $a_data){
 		$this->db->trans_begin();
 
-		$r1 = $this->db->insert('patients', $u_data);
-		$patinet_id = $this->db->insert_id();
-
-		$a_data = array(
-			'patient_id'			=>		$patinet_id,
-			'address'				=>		$mobile,
-			'state'					=>		$mobile,
-			'city'					=>		$dob,
-			'pincode'				=>		$gender		
-		);
-
-
-		$r2 = $this->db->insert('patient_address', $a_data);
+		$r1 = $this->db->insert('users', $u_data);
+		
+		$r2 = $this->db->insert('user_info', $a_data);
 
 		if (($r1==true)&&($r2==true)) {
 			$this->db->trans_commit();

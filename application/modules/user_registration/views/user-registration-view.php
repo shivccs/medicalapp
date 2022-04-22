@@ -91,9 +91,10 @@
         </div>
         <div class="col-md-3 col-sm-3 col-xs-12">
           <select class="form-control" name="role" required id="role">
-            <?php foreach ($roles as $key => $rvalue) { ?>
-              <option value="<?php echo $rvalue['role_id']; ?>"><?php echo $rvalue['role_name']; ?></option>
-            <?php } ?>
+            <option hidden>Please select the role</option>
+            <option value="3">Lab Technician</option>
+            <option value="4">Nurse</option>
+            <option value="5">Pharmacist</option>
           </select>
         </div>                
       </div>

@@ -48,5 +48,17 @@ class Doctors_category_model extends CI_model {
 		}
 	}//end of function check_mobile
 
+	function get_disease(){
+		$this->db->select('*');
+		$this->db->from('disease d');
+		$this->db->order_by('d.disease_name', 'asc');
+		$q = $this->db->get();
+		if ($q->num_rows()>0) {
+			return $q->result_array();
+		}else{
+			return false;
+		}
+	}//end of function check_mobile
+
 
 }//end of class

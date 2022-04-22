@@ -23,7 +23,7 @@
                   </label>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12">
-                  <input type="text" required="required"  name="allergy" id="name" class="form-control" required>
+                  <input type="text" required="required"  name="disease_name" id="disease_name" class="form-control" required>
 				  </div>
 				
 				<div class="col-md-2 col-sm-3 col-xs-12">
