@@ -59,7 +59,7 @@ class Registration extends MX_Controller {
 			'user_id'				=>		$user_id,
 			'gender'				=>		$gender,
 			'dob'					=>		$dob,
-			'maritial_status'		=>		$mstatus,
+			'marital_status'		=>		$mstatus,
 			'address'				=>		$address,
 			'state'					=>		$state,
 			'city'					=>		$city,

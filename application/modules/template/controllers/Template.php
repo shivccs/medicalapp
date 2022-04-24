@@ -15,6 +15,9 @@ class Template extends MX_Controller {
 					
 					$data = array('module' => 'admin_dashboard');	
 					$this->load->view('template-view', $data);
+		}else if(isset($this->session->userdata['sessiondata']['user_id'])  && ($this->session->userdata['sessiondata']['is_active']==1) && ($this->session->userdata['sessiondata']['user_type']==6)){
+					$data = array('module' => 'patient_dashboard');	
+					$this->load->view('template-view', $data);
 		}else{
 					$this->load->module('auth');
 					$this->auth->logout();

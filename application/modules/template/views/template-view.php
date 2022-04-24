@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CelestialUI Admin</title>
+  <title>Remedio - One Stop Medical Solution</title>
   <!-- base:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>theme/vendors/typicons.font/font/typicons.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>theme/vendors/mdi/css/materialdesignicons.min.css">
@@ -39,9 +39,11 @@
       <!-- partial:theme/partials/_sidebar.html -->
       <?php if (($this->session->userdata['sessiondata']['user_type']==1)) {
         $this->load->view('admin-sidebar');
+        }else if (($this->session->userdata['sessiondata']['user_type']==6)) {
+        $this->load->view('patient-sidebar');
         }else{
             $this->load->view('user-sidebar');
-          }
+        }
       ?>
       <!-- partial -->
       <div class="main-panel">        

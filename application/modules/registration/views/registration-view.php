@@ -50,8 +50,9 @@
                     <div class="form-group">
                       <select class="form-control" name="gender" required>
                         <option hidden="">Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                        <option value="o">Other</option>
                       </select>
                     </div>
                   </div>
@@ -59,8 +60,8 @@
                     <div class="form-group">
                       <select class="form-control" name="mstatus" required>
                         <option hidden="">Marital status</option>
-                        <option>Married</option>
-                        <option>Unmarried</option>
+                        <option value="Married">Married</option>
+                        <option value="Unmarried">Unmarried</option>
                       </select>
                     </div>
                   </div>
