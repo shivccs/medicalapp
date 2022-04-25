@@ -283,6 +283,19 @@ class Template extends MX_Controller {
 			
 	}//end of doctors_list funtion
 
+	public function available_doctors_list()
+	{	
+
+		if(isset($this->session->userdata['sessiondata']['user_id'])  && ($this->session->userdata['sessiondata']['is_active']==1) && ($this->session->userdata['sessiondata']['user_type']==6)){
+					
+			$data = array('module' => 'doctors_list/available_doctors_list');	
+			$this->load->view('template-view', $data);
+		}else{
+			$this->load->module('auth');
+			$this->auth->logout();
+		}//end of else to check login session detail
+			
+	}//end of doctors_list funtion
 	public function doctor_profile()
 	{	
 

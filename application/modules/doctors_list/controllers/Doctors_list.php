@@ -22,6 +22,17 @@ class Doctors_list extends MX_Controller {
 		$this->load->view('doc-list-view', $data);
 			
 	}//end of index
+	public function available_doctors_list(){
+		$this->load->model('doctors_list_model');
+		$user_id = $this->session->userdata['sessiondata']['user_id'];
+		
+		$doctors_data = $this->doctors_list_model->get_doctors_data();
+
+		$data = array(
+			'doctors_data'		=>		$doctors_data
+		);
+		$this->load->view('avlbl-doc-list-view', $data);
+	}
 
 	function find_user(){
 		$session_user_id = $this->session->userdata['sessiondata']['user_id'];

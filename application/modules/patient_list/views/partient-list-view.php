@@ -19,9 +19,6 @@
             <th>Mobile</th>
             <th>Gender</th>
             <th>Maritial Status</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Blood Group</th>
             <th>Profile</th>
           </tr>
         </thead>
@@ -32,18 +29,15 @@
                     foreach ($patient_data as $key => $udvalue) { ?>
           <tr>
             <td><?php echo $sno; ?></td>
-            <td><?php echo $udvalue['patient_id']; ?></td>
-            <td><?php echo $udvalue['patient_name']; ?></td>
-            <td><?php echo $udvalue['phone_number']; ?></td>
+            <td><?php echo $udvalue['user_id']; ?></td>
+            <td><?php echo $udvalue['first_name'].' '.$udvalue['last_name']; ?></td>
+            <td><?php echo $udvalue['phone']; ?></td>
             <td><?php echo $udvalue['gender']; ?></td>
             <td><?php echo $udvalue['maritial_status']; ?></td>
-            <td><?php echo $udvalue['height']; ?></td>
-            <td><?php echo $udvalue['weight']; ?></td>
-            <td><?php echo $udvalue['blood_group']; ?></td>
      
             <td>
               <form method="post" action="<?php echo base_url(); ?>patient_list/find_user">
-                <input type="hidden" name="user_id" value="<?php echo $udvalue['patient_id']; ?>">
+                <input type="hidden" name="user_id" value="<?php echo $udvalue['user_id']; ?>">
               <button type="submit" class="btn btn-info btn-sm">View</button>
 
               </form>

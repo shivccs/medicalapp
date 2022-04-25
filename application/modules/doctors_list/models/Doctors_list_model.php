@@ -18,7 +18,7 @@ class Doctors_list_model extends CI_model {
 			return false;
 		}
 	}//end of function get_doctors_data
-
+	
 
 	function get_check_doctor($user_id){
 		$this->db->select('doctor_id');
