@@ -25,13 +25,6 @@
                 <h3><?php echo $doc_data['first_name'].' '.$doc_data['last_name']; ?></h3>
                 <div class="">
                   <h5 class="mb-0 me-2 text-muted">
-                    <?php
-                      if ($doc_data['doctor_type']==1) {
-                          echo "Affiliate Doctor";
-                      }else{
-                          echo "Senior Consultant Doctor";
-                      }
-                    ?>
                   </h5>
                   <div>
                     <i class="typcn typcn-star-full-outline"></i>

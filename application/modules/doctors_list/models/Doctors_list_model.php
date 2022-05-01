@@ -5,7 +5,7 @@ class Doctors_list_model extends CI_model {
 	
 
 	function get_doctors_data(){
-		$this->db->select('d.doctor_id, d.doctor_type, d.first_name, d.last_name, d.email, d.phone, d.is_active, dr.category_name, CONCAT(uu.first_name, " ", uu.last_name) as added_by, di.added_on');
+		$this->db->select('d.doctor_id, d.first_name, d.last_name, d.email, d.phone, d.is_active, dr.category_name, CONCAT(uu.first_name, " ", uu.last_name) as added_by, di.added_on');
 		$this->db->from('doctors d');
 		$this->db->join('doctors_category dr', 'dr.doctor_category_id=d.category_id', 'left');
 		$this->db->join('doctor_info di', 'di.doctor_id=d.doctor_id', 'left');

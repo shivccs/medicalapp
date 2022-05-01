@@ -43,6 +43,31 @@ INSERT INTO `allergies` VALUES (1,'Loctose1',1,'dpappadmin','2021-08-03'),(3,'a1
 UNLOCK TABLES;
 
 --
+-- Table structure for table `category_disease`
+--
+
+DROP TABLE IF EXISTS `category_disease`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `category_disease` (
+  `category_id` varchar(20) NOT NULL,
+  `disease_name` varchar(100) DEFAULT NULL,
+  `added_by` varchar(20) DEFAULT NULL,
+  `added_on` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category_disease`
+--
+
+LOCK TABLES `category_disease` WRITE;
+/*!40000 ALTER TABLE `category_disease` DISABLE KEYS */;
+INSERT INTO `category_disease` VALUES ('DCI2022050102705','COPD','dpappadmin','2022-05-01'),('DCI2022050102705','Diabetes','dpappadmin','2022-05-01'),('DCI2022050102705','Hypertension','dpappadmin','2022-05-01'),('DCI2022050102705','PCOS','dpappadmin','2022-05-01');
+/*!40000 ALTER TABLE `category_disease` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `cities`
 --
 
@@ -338,7 +363,7 @@ CREATE TABLE `doctors_category` (
 
 LOCK TABLES `doctors_category` WRITE;
 /*!40000 ALTER TABLE `doctors_category` DISABLE KEYS */;
-INSERT INTO `doctors_category` VALUES ('DCI2021072545216','GENERAL PHYSICIAN','General Doctors',1,'dpappadmin','2021-07-25');
+INSERT INTO `doctors_category` VALUES ('DCI2021072545216','GENERAL PHYSICIAN','General Doctors',1,'dpappadmin','2021-07-25'),('DCI2022050102705','TESTDSF','dffdds',1,'dpappadmin','2022-05-01'),('DCI2022050145008','TEST','dsfsfd',1,'dpappadmin','2022-05-01');
 /*!40000 ALTER TABLE `doctors_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -384,7 +409,7 @@ CREATE TABLE `images` (
   `upload_on` date NOT NULL,
   `upload_by` varchar(20) NOT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -393,7 +418,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'DCI2021072545216','uploads/category/DCI2021072545216','2107251627219605.jpg','2021-07-25','dpappadmin'),(8,'DOC2021072648464','uploads/doctor/DOC2021072648464','2107291627568603.jpg','2021-07-29','dpappadmin');
+INSERT INTO `images` VALUES (1,'DOC2021072648464','uploads/profile_images/DOC2021072648464','2205011651408720.jpeg','2022-05-01','dpappadmin'),(2,'PT2022042413751','uploads/profile_images/PT2022042413751','2205011651410195.jpg','2022-05-01','dpappadmin'),(3,'DCI2022050145008','uploads/category/DCI2022050145008','2205011651411665.png','2022-05-01','dpappadmin'),(4,'DCI2022050102705','uploads/category/DCI2022050102705','2205011651413662.jpg','2022-05-01','dpappadmin');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1010,6 +1035,7 @@ CREATE TABLE `user_info` (
   `latitude` varchar(15) DEFAULT NULL,
   `longitude` varchar(15) DEFAULT NULL,
   `added_on` date NOT NULL,
+  `added_by` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1021,7 +1047,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('PT2022042413751','','Male','Married','2022-12-31','Jkp',38,4933,'226021',NULL,NULL,'2022-04-24'),('UID2021072526509','abcd','m',NULL,'0000-00-00','up',31,3121,'226022','26.9402044','80.9318324','2021-07-25');
+INSERT INTO `user_info` VALUES ('PT2022042413751','','Male','Married','2022-12-31','Jkp',38,4933,'226021',NULL,NULL,'2022-04-24',NULL),('UID2021072526509','abcd','m',NULL,'0000-00-00','up',31,3121,'226022','26.9402044','80.9318324','2021-07-25',NULL);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1074,6 +1100,7 @@ CREATE TABLE `users` (
   `is_mobile_verify` tinyint(1) NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1085,7 +1112,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('dpappadmin',1,1,'System',NULL,'Admin','admin@admin.com','9889012345','asdf','2022-04-24 17:19:25',19,1,1,1,'2021-07-25 10:12:00'),('PT2022042413751',6,6,'Test',NULL,'One','patientone@gmail.com','9807889887','9807889887','2022-04-24 17:19:38',2,0,0,1,'2022-04-24 11:40:13'),('UID2021072526509',3,3,'shiva','-','test','shiv@admin.com','8853535489','test','2024-08-21 09:07:59',3,0,0,1,'2021-07-25 10:17:26');
+INSERT INTO `users` VALUES ('dpappadmin',1,1,'System',NULL,'Admin','admin@admin.com','9889012345','asdf','2022-05-01 17:32:02',21,1,1,1,'2021-07-25 10:12:00',NULL),('PT2022042413751',6,6,'Test',NULL,'One','patientone@gmail.com','9807889887','9807889887','2022-04-24 17:19:38',2,0,0,1,'2022-04-24 11:40:13',NULL),('UID2021072526509',3,3,'shiva','-','test','shiv@admin.com','8853535489','test','2024-08-21 09:07:59',3,0,0,1,'2021-07-25 10:17:26',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1098,4 +1125,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-24 17:20:04
+-- Dump completed on 2022-05-01 20:05:11

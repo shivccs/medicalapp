@@ -5,7 +5,7 @@ class Doctor_profile_model extends CI_model {
 	
 
 	function get_doctor_data($temp_doc_id){
-		$this->db->select('d.doctor_id, d.doctor_type, d.first_name, d.last_name, d.email, d.phone, d.category_id, d.is_active, d.speciality_id, dr.category_name, CONCAT(uu.first_name, " ", uu.last_name) as added_by, di.*, st.name as state_name, ct.name as city_name, dp.registration_no as regi,dp.medical_council as council ,dp.certification_year as certificate ,dp.medical_degree as degree, dp.passout_year as passout , dp.college_name as collage, dp.experience as exp');
+		$this->db->select('d.doctor_id, d.first_name, d.last_name, d.email, d.phone, d.category_id, d.is_active, d.speciality_id, dr.category_name, CONCAT(uu.first_name, " ", uu.last_name) as added_by, di.*, st.name as state_name, ct.name as city_name, dp.registration_no as regi,dp.medical_council as council ,dp.certification_year as certificate ,dp.medical_degree as degree, dp.passout_year as passout , dp.college_name as collage, dp.experience as exp');
 		$this->db->from('doctors d');
 		$this->db->join('doctors_category dr', 'dr.doctor_category_id=d.category_id');
 		$this->db->join('doctor_info di', 'di.doctor_id=d.doctor_id');

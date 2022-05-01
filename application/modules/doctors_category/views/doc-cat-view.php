@@ -27,8 +27,8 @@
 
 
         <tbody>
-          <?php $sno =1; if ($units) {
-                    foreach ($units as $key => $urvalue) { ?>
+          <?php $sno =1; if ($categories) {
+                    foreach ($categories as $key => $urvalue) { ?>
           <tr>
             <td><?php echo $sno; ?></td>
             <td><?php echo $urvalue['category_name']; ?></td>
@@ -50,7 +50,14 @@
 
             ?>
            </td>
-            <td></td>
+            <td>
+              <?php if ($urvalue['assigned_disease']) {
+                      foreach ($urvalue['assigned_disease'] as $key => $cdvalue) {
+                        echo $cdvalue['disease_name'].', ';
+                      }
+                // code...
+              } ?>
+            </td>
             <td>
               <a href="<?php echo base_url('category_edit/edit/'.$urvalue['status']) ?>" class="text-info">
                 <i class="mdi mdi-grease-pencil" aria-hidden="true"></i>
@@ -107,7 +114,7 @@
               <div class="col-md-4 col-12 form-group">
                 <div class="form-check form-check-flat form-check-primary">
                   <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" class="form-check-input" name="disease[]" value="<?php echo $value['disease_name']; ?>">
                     
                     <?php echo $value['disease_name']; ?>
                   <i class="input-helper"></i></label>

@@ -13,12 +13,12 @@ class Doctors_category extends MX_Controller {
 
 		$this->load->model('doctors_category_model');
 		$user_id = $this->session->userdata['sessiondata']['user_id'];
-		$units = $this->doctors_category_model->get_category();
+		$categories = $this->doctors_category_model->get_category();
 		$diseases = $this->doctors_category_model->get_disease();
 		//var_dump($doctors_categorys);exit;
 		$data = array(
-			'units'		=>	$units,
-			'diseases'	=>	$diseases
+			'categories'		=>	$categories,
+			'diseases'			=>	$diseases
 		);
 		$this->load->view('doc-cat-view', $data);
 			
@@ -32,7 +32,9 @@ class Doctors_category extends MX_Controller {
 		$this->load->library('create_id');
 		$category		=		$this->input->post('category');
 		$info			=		$this->input->post('info');
+		$disease		=		$this->input->post('disease');
 
+		//var_dump($disease);exit;
 		$check_category = $this->doctors_category_model->check_category(strtoupper($category));
 
 
@@ -41,6 +43,8 @@ class Doctors_category extends MX_Controller {
 			$this->session->set_flashdata('msg', 'This category is already available!');
 		    redirect(base_url().'template/doctors_category');
 		}else{
+
+
 			$cat_id = $this->create_id->construct_id('DCI');
 			$cdata = array(
 				'doctor_category_id'			=>		$cat_id,
@@ -91,7 +95,7 @@ class Doctors_category extends MX_Controller {
 	            );
 
 	                
-	            $result = $this->doctors_category_model->register($idata, $cdata);
+	            $result = $this->doctors_category_model->register($idata, $cdata, $disease, $session_user_id);
 
 				if ($result) {
 				$this->session->set_flashdata('msg', 'Category successfully added!');

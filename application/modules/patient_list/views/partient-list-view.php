@@ -18,7 +18,6 @@
             <th>Patient Name</th>
             <th>Mobile</th>
             <th>Gender</th>
-            <th>Maritial Status</th>
             <th>Profile</th>
           </tr>
         </thead>
@@ -32,9 +31,7 @@
             <td><?php echo $udvalue['user_id']; ?></td>
             <td><?php echo $udvalue['first_name'].' '.$udvalue['last_name']; ?></td>
             <td><?php echo $udvalue['phone']; ?></td>
-            <td><?php echo $udvalue['gender']; ?></td>
-            <td><?php echo $udvalue['maritial_status']; ?></td>
-     
+            <td><?php echo $udvalue['gender']; ?></td>     
             <td>
               <form method="post" action="<?php echo base_url(); ?>patient_list/find_user">
                 <input type="hidden" name="user_id" value="<?php echo $udvalue['user_id']; ?>">

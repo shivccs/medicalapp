@@ -28,17 +28,6 @@
             <tr>
               <td><?php echo $sno; ?></td>
               <td><?php echo $udvalue['doctor_id']; ?></td>
-              <td>
-                <?php
-                    if ($udvalue['doctor_type']==1) {
-                        echo "Affiliate Doctor";
-                    }else{
-                        echo "Senior Consultant Doctor";
-                    }
-
-
-                ?>
-              </td>
               <td><?php echo $udvalue['first_name'].' '.$udvalue['last_name']; ?></td>
               <td><?php echo $udvalue['category_name']; ?></td>
               <td><?php echo $udvalue['email']; ?></td>

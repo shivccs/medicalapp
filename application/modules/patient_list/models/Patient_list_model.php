@@ -23,7 +23,7 @@ class Patient_list_model extends CI_model {
 		$this->db->select('user_id');
 		$this->db->where('user_id', $user_id);
 		
-		$q = $this->db->get('patients');
+		$q = $this->db->get('users');
 		if ($q->num_rows()>0) {
 			return true;
 		}else{

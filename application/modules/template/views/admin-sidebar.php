@@ -63,5 +63,17 @@
         </ul>
       </div>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="ui-basic">
+        <i class="typcn typcn-pipette menu-icon"></i>
+        <span class="menu-title">Settings</span>
+        <i class="typcn typcn-chevron-right menu-arrow"></i>
+      </a>
+      <div class="collapse" id="settings">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>template/add_symptoms">Symptoms</a></li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </nav>

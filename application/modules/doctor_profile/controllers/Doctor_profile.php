@@ -72,7 +72,7 @@ class Doctor_profile extends MX_Controller {
         $config['file_name']            = $new_name;	            
 
 	    $this->load->library('upload', $config);
-
+	    //var_dump($this->upload->do_upload('file'));exit;
         if(!$this->upload->do_upload('file'))
         {
         
@@ -84,7 +84,7 @@ class Doctor_profile extends MX_Controller {
         }else{
 	                                         
 	            $updoc_details = $this->upload->data();
-
+	            //var_dump($user_image_data);exit;
 	            $idata = array(
 	            	'ref_id'			=>	$doctor_id,
 					'path'				=>	$doc_path,
@@ -104,7 +104,7 @@ class Doctor_profile extends MX_Controller {
 				           	if ($del_status) {
 				           		
 				           		$result = $this->doctor_profile_model->update_image_details($idata, $user_image_data);
-				           		var_dump($result);exit; 
+				           		//var_dump($result);exit; 
 				           	}else{
 				           		$this->session->set_flashdata('msg', 'failed to remove existing document!');
 				           		redirect(base_url().'template/doctor_profile');
@@ -115,7 +115,7 @@ class Doctor_profile extends MX_Controller {
                 	 $result = $this->doctor_profile_model->add_image_data($idata);
     
                 }//end of if else check 
-
+                //var_dump($result);exit;
 				if ($result) {
 				$this->session->set_flashdata('msg', 'Image successfully added!');
 			        redirect(base_url().'template/doctor_profile');

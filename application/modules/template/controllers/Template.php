@@ -487,8 +487,7 @@ public function patient_list()
 			
 	}
 	
-		public function add_symptoms()
-	{	
+	public function add_symptoms(){	
 
 		if(isset($this->session->userdata['sessiondata']['user_id'])  && ($this->session->userdata['sessiondata']['is_active']==1) && ($this->session->userdata['sessiondata']['user_type']==1)){
 					
@@ -499,7 +498,7 @@ public function patient_list()
 					$this->auth->logout();
 			}//end of else to check login session detail
 			
-	}
+	}//end of function add_symptoms
 	
 		public function symptoms_edit()
 	{	
